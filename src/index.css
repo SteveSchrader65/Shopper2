@@ -243,6 +243,7 @@ html {
               }
             }
 
+            &:focus,
             &:hover {
               background-color: #bbff99;
             }
