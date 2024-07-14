@@ -13,8 +13,6 @@ const ItemLine = ({ item }) => {
   const [newRequired, setNewRequired] = useState(item.rqd);
 
   const updateItem = (e) => {
-    e.preventDefault();
-
     const updatedItems = items.map((i) =>
       i.idn === item.idn
         ? {
