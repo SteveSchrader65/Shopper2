@@ -12,7 +12,7 @@ const ItemLine = ({ item }) => {
   const [newDescription, setNewDescription] = useState(item.des);
   const [newRequired, setNewRequired] = useState(item.rqd);
 
-  const updateItem = (e) => {
+  const updateItem = () => {
     const updatedItems = items.map((i) =>
       i.idn === item.idn
         ? {
