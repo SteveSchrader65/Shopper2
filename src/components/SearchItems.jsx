@@ -3,8 +3,6 @@ import {AppContext} from '../App';
 
 const SearchItems = () => {
   const { items, search, setSearch, setSearchResults } = useContext(AppContext);
-  // ?? Include handleCheck and edit field methods to determine filteredItems ??
-  // ?? These could be passed thru a new useContext from itemLine ??
 
   useEffect(() => {
     const filteredItems = items.filter((item) =>
