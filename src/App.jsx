@@ -11,7 +11,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [search, setSearch] = useState("");
   const isInitialMount = useRef(true);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // const delay = setTimeout(() => {
