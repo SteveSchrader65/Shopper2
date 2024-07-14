@@ -28,8 +28,15 @@ const Content = (props) => {
           </Reorder.Group>
         ) : (
           <div>
-            {!props.isLoading && <p className="message">Your list is currently empty</p>}
-            {props.isLoading && <p className="loading message">Loading your Shopper List ...</p>}
+            {!props.isLoading && search === "" && (
+              <p className="message">Your list is currently empty</p>
+            )}
+            {props.isLoading && search === "" && (
+              <p className="loading message">Loading your Shopper List ...</p>
+            )}
+            {!props.isLoading && search !== "" && (
+              <p className="message">No matching items ...</p>
+            )}
           </div>
         )}
       </Stylebars>
