@@ -17,7 +17,13 @@ const ItemLine = ({ item }) => {
 
     const updatedItems = items.map((i) =>
       i.idn === item.idn
-        ? { ...i, ckd: i.ckd, des: newDescription, qty: parseInt(quantity, 10), rqd: parseInt(newRequired, 10) }
+        ? {
+            ...i,
+            ckd: i.ckd,
+            des: newDescription,
+            qty: parseInt(quantity, 10),
+            rqd: parseInt(newRequired, 10),
+          }
         : i
     );
 
@@ -27,7 +33,13 @@ const ItemLine = ({ item }) => {
   const handleCheck = (itemNumber) => {
     if (search) {
       const updatedSearchResults = searchResults.map((i) =>
-        i.idn === itemNumber ? { ...i, ckd: !i.ckd, qty: i.ckd ? 0 : i.rqd } : i
+        i.idn === itemNumber
+          ? {
+              ...i,
+              ckd: !i.ckd,
+              qty: i.ckd ? 0 : i.rqd,
+            }
+          : i
       );
 
       setSearchResults(updatedSearchResults);
@@ -35,7 +47,13 @@ const ItemLine = ({ item }) => {
     }
 
     const updatedListItems = items.map((i) =>
-      i.idn === itemNumber ? { ...i, ckd: !i.ckd, qty: i.ckd ? 0 : i.rqd } : i
+      i.idn === itemNumber
+        ? {
+            ...i,
+            ckd: !i.ckd,
+            qty: i.ckd ? 0 : i.rqd,
+          }
+        : i
     );
 
     setItems(updatedListItems);
