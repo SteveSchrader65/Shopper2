@@ -11,7 +11,6 @@ const AddItem = () => {
   const createNewItem = (e) => {
     e.preventDefault();
 
-    // Create new item object
     const newItem = {
       idn: items.length > 0 ? Math.max(...items.map((item) => item.idn)) + 1 : 1,
       ckd: true,

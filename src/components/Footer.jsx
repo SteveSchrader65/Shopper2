@@ -29,8 +29,7 @@ const Footer = () => {
       <div className="printOnly">
         <Print ref={componentRef} listItems={checkedItems} />
       </div>
-      <button
-        onClick={handlePrint}
+      <button onClick={handlePrint}
         data-tooltip-id="printTip"
         data-tooltip-content="Print Shopping List"
         data-tooltip-delay-show={250}
