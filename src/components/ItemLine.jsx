@@ -37,7 +37,7 @@ const ItemLine = ({ item }) => {
           ? {
               ...i,
               ckd: !i.ckd,
-              qty: i.ckd ? 0 : i.rqd,
+              qty: i.ckd ? i.rqd : 0,
             }
           : i
       );
@@ -51,7 +51,7 @@ const ItemLine = ({ item }) => {
         ? {
             ...i,
             ckd: !i.ckd,
-            qty: i.ckd ? 0 : i.rqd,
+            qty: i.ckd ? i.rqd : 0,
           }
         : i
     );

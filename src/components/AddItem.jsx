@@ -16,7 +16,7 @@ const AddItem = () => {
       idn: items.length > 0 ? Math.max(...items.map((item) => item.idn)) + 1 : 1,
       ckd: true,
       des: itemDescription,
-      qty: 0,
+      qty: parseInt(itemRequired, 10),
       rqd: parseInt(itemRequired, 10),
     };
 

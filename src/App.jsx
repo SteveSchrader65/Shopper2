@@ -15,11 +15,11 @@ function App() {
 
   useEffect(() => {
     // const delay = setTimeout(() => {
+    setIsLoading(true);
     setItems(JSON.parse(localStorage.getItem("shopperItems")));
     setIsLoading(false);
     // }, 1000);
 
-    setIsLoading(true);
     // return () => clearTimeout(delay);
   }, []);
 
@@ -27,11 +27,7 @@ function App() {
     if (isInitialMount.current) {
       isInitialMount.current = false;
     } else {
-      // const delay = setTimeout(() => {
       localStorage.setItem("shopperItems", JSON.stringify(items));
-      // }, 1010);
-
-      // return () => clearTimeout(delay);
     }
   }, [items]);
 
