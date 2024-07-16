@@ -41,7 +41,7 @@ const AddItem = () => {
         id="addRequired"
         type="number"
         value={itemRequired}
-        min={1}
+        min={0}
         max={50}
         onChange={(e) => setItemRequired(e.target.value)}
         required
