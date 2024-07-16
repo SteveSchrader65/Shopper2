@@ -21,7 +21,7 @@ const AddItem = () => {
 
     setItems([...items, newItem]);
     setItemDescription("");
-    setItemRequired("");
+    setItemRequired(0);
   };
 
   return (

@@ -6,7 +6,7 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 export const AppContext = createContext();
 
-function App() {
+const App = () => {
   const [items, setItems] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [search, setSearch] = useState("");
