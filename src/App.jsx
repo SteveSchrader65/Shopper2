@@ -14,9 +14,9 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // const delay = setTimeout(() => {
     const storedList = JSON.parse(localStorage.getItem("shopperItems")) || [];
 
+    // const delay = setTimeout(() => {
     setIsLoading(true);
     setItems(storedList);
     setIsLoading(false);
