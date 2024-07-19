@@ -6,7 +6,7 @@ import { FaList } from "react-icons/fa";
 import Print from './Print';
 
 const Footer = () => {
-  const { items } = useContext(AppContext);
+  const { items, search, searchResults } = useContext(AppContext);
   const componentRef = useRef();
 
   const handlePrint = useReactToPrint({
@@ -21,22 +21,36 @@ const Footer = () => {
     itemCount = checkedItems.reduce((i, thisItem) => i + thisItem.qty, 0);
   }
 
+  if (search !== "") {
+    itemCount = searchResults.length;
+  }
+
   return (
     <footer>
-      <p>
-        Total: {itemCount} {itemCount === 1 ? "Item" : "Items"}
-      </p>
-      <div className="printOnly">
-        <Print ref={componentRef} listItems={checkedItems} />
-      </div>
-      <button onClick={handlePrint}
-        data-tooltip-id="printTip"
-        data-tooltip-content="Print Shopping List"
-        data-tooltip-delay-show={250}
-        data-tooltip-delay-hide={250}>
-        <FaList className="printList" />
-        <Tooltip id="printTip" place="top" effect="solid" />
-      </button>
+      {search === "" ? (
+        <>
+          <p>
+            Total: {itemCount} {itemCount === 1 ? "Item" : "Items"}
+          </p>
+          {/* Hide print button if search results exist or itemCount === 0 */}
+          <div className="printOnly">
+            <Print ref={componentRef} listItems={checkedItems} />
+          </div>
+          <button
+            onClick={handlePrint}
+            data-tooltip-id="printTip"
+            data-tooltip-content="Print Shopping List"
+            data-tooltip-delay-show={250}
+            data-tooltip-delay-hide={250}>
+            <FaList className="printList" />
+            <Tooltip id="printTip" place="top" effect="solid" />
+          </button>
+        </>
+      ) : (
+        <p>
+          Search Count: {itemCount} {itemCount === 1 ? "Item" : "Items"}
+        </p>
+      )}
     </footer>
   );
 };
