@@ -32,19 +32,22 @@ const Footer = () => {
           <p>
             Total: {itemCount} {itemCount === 1 ? "Item" : "Items"}
           </p>
-          {/* Hide print button if search results exist or itemCount === 0 */}
-          <div className="printOnly">
-            <Print ref={componentRef} listItems={checkedItems} />
-          </div>
-          <button
-            onClick={handlePrint}
-            data-tooltip-id="printTip"
-            data-tooltip-content="Print Shopping List"
-            data-tooltip-delay-show={250}
-            data-tooltip-delay-hide={250}>
-            <FaList className="printList" />
-            <Tooltip id="printTip" place="top" effect="solid" />
-          </button>
+          {itemCount > 0 && (
+            <>
+              <div className="printOnly">
+                <Print ref={componentRef} listItems={checkedItems} />
+              </div>
+              <button
+                onClick={handlePrint}
+                data-tooltip-id="printTip"
+                data-tooltip-content="Print Shopping List"
+                data-tooltip-delay-show={250}
+                data-tooltip-delay-hide={250}>
+                <FaList className="printList" />
+                <Tooltip id="printTip" place="top" effect="solid" />
+              </button>
+            </>
+          )}
         </>
       ) : (
         <p>
