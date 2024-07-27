@@ -73,8 +73,6 @@
 }
 
 html {
-  font-size: 16px;
-
   body {
     min-height: 100vh;
     font-family: 'Roboto', 'Oxygen', sans-serif;
@@ -336,20 +334,32 @@ html {
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .container {
-    width: 90%;
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+
+    .container {
+      width: 90%;
+    }
   }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 850px) {
-  .container {
-    width: 75%;
+@media only screen and (min-width: 401px) and (max-width: 1050px) {
+  html {
+    font-size: 14px;
+
+    .container {
+      width: 75%;
+    }
   }
 }
 
-@media only screen and (min-width: 851px) {
-  .container {
-    width: 55%;
+@media only screen and (min-width: 1051px) {
+  html {
+    font-size: 16px;
+
+    .container {
+      width: 55%;
+    }
   }
 }
