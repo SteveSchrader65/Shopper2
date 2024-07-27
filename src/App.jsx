@@ -8,16 +8,16 @@ export const AppContext = createContext();
 
 const App = () => {
   const [items, setItems] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
   const [search, setSearch] = useState("");
-  const isInitialMount = useRef(true);
+  const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
     const storedList = JSON.parse(localStorage.getItem("shopperItems")) || [];
 
-    // const delay = setTimeout(() => {
     setIsLoading(true);
+    // const delay = setTimeout(() => {
     setItems(storedList);
     setIsLoading(false);
     // }, 1000);

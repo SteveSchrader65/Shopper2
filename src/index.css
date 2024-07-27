@@ -88,7 +88,6 @@ html {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 55%;
       border: 3px solid mediumblue;
       margin: 0.5% auto;
       background-color: rgb(181, 179, 250);
@@ -145,7 +144,6 @@ html {
             cursor: pointer;
           }
         }
-
       }
 
       main {
@@ -335,5 +333,23 @@ html {
         line-height: 2.5rem;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 850px) {
+  .container {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 851px) {
+  .container {
+    width: 55%;
   }
 }

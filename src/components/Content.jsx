@@ -12,8 +12,10 @@ const Content = (props) => {
 
   const sortedSearchResults = [...searchResults].sort((a, b) => b.ckd - a.ckd);
 
+  const isSearching = search !== "" ? true : false;
+
   const displayedItems =
-    searchResults.length > 0 ? sortedSearchResults : search === "" ? sortedItems : [];
+    searchResults.length > 0 ? sortedSearchResults : !isSearching ? sortedItems : [];
 
   return (
     <main>
@@ -28,13 +30,13 @@ const Content = (props) => {
           </Reorder.Group>
         ) : (
           <div>
-            {props.isLoading && search === "" && (
+            {props.isLoading && !isSearching && (
               <p className="loading message">Loading your Shopper List ...</p>
             )}
-            {!props.isLoading && search === "" && (
+            {!props.isLoading && !isSearching && (
               <p className="message">Your list is currently empty</p>
             )}
-            {!props.isLoading && search !== "" && <p className="message">No matching items ...</p>}
+            {!props.isLoading && isSearching && <p className="message">No matching items ...</p>}
           </div>
         )}
       </Stylebars>
